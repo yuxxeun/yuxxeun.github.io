@@ -20,7 +20,7 @@ p {
 }
 .lni {
     margin: 0 10px;
-    color: orange;
+    color: rgb(255, 94, 242);
 }
 .profile {
     border: 5px #fff solid;
@@ -30,11 +30,11 @@ p {
     box-shadow: -8px 8px 0px 0px orange; */
 }
 .talks {
-    color: orange;
+    color: rgb(255, 94, 242);
     text-decoration: none;
 }
 
 .talks:hover {
-    color: orange;
+    color: #fff;
     text-decoration: underline;
 }
