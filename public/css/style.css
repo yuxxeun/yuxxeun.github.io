@@ -3,8 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
 body {
-    background-color: #100818;
-    color: #fff;
+    background-color: whitesmoke;
+    color: #000;
 }
 h1 {
     font-weight: 700;
@@ -20,10 +20,10 @@ p {
 }
 .lni {
     margin: 0 10px;
-    color: rgb(255, 94, 242);
+    color: #ff38c3;
 }
 .profile {
-    border: 5px #fff solid;
+    border: 5px magenta solid;
     border-radius: 50%;
     /* -webkit-box-shadow: -8px 8px 0px 0px orange;
     -moz-box-shadow: -8px 8px 0px 0px orange;
