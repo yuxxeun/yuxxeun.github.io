@@ -24,17 +24,17 @@ p {
 }
 .profile {
     border: 5px #ff38c3 solid;
-    border-radius: 45%;
+    border-radius: 55%;
     /* -webkit-box-shadow: -8px 8px 0px 0px orange;
     -moz-box-shadow: -8px 8px 0px 0px orange;
     box-shadow: -8px 8px 0px 0px orange; */
 }
 .talks {
     color: rgb(255, 94, 242);
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .talks:hover {
-    color: #fff;
+    color: #000;
     text-decoration: underline;
 }
