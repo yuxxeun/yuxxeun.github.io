@@ -24,16 +24,17 @@ p {
 }
 .profile {
     border: 5px #fff solid;
-    -webkit-box-shadow: -8px 8px 0px 0px #ff38c3;
-    -moz-box-shadow: -8px 8px 0px 0px #ff38c3;
-    box-shadow: -8px 8px 0px 0px #ff38c3;
+    border-radius: 10px;
+    -webkit-box-shadow: -7px 7px 0px 0px #ff38c3;
+    -moz-box-shadow: -7px 7px 0px 0px #ff38c3;
+    box-shadow: -7px 7px 0px 0px #ff38c3;
 }
 .talks {
-    color: rgb(255, 94, 242);
+    color: #ff38c3;
     text-decoration: underline;
 }
 
 .talks:hover {
-    color: #000;
+    color: whitesmoke;
     text-decoration: underline;
 }

@@ -1,2 +1,2 @@
-# TedTalks
-Mirip kayak TedTalks cuman ini berbentuk tulisan aja.
+# superUser
+yuxxeun's was create a website profile for fun & profit.
