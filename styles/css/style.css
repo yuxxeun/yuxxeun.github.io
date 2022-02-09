@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
 body {
-    background-color: #100818;
+    background-color: #000;
     color: #fff;
 }
 
@@ -40,15 +40,15 @@ p {
 
 .lni {
     margin: 0 10px;
-    color: #ff38c3;
+    color: #f61af7;
 }
 
 .profile {
     border: 5px #fff solid;
     border-radius: 10px;
-    -webkit-box-shadow: -7px 7px 0px 0px #ff38c3;
-    -moz-box-shadow: -7px 7px 0px 0px #ff38c3;
-    box-shadow: -7px 7px 0px 0px #ff38c3;
+    -webkit-box-shadow: -7px 7px 0px 0px #f61af7;
+    -moz-box-shadow: -7px 7px 0px 0px #f61af7;
+    box-shadow: -7px 7px 0px 0px #f61af7;
 }
 
 .talks {
