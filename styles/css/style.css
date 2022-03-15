@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
 ::selection {
@@ -13,16 +13,21 @@ body {
 @media (prefers-reduced-motion) {
     .__logo {
         -moz-animation: __logo-spin infinite 2s cubic-bezier(1, 0.3, 0.5, 7);
+        -webkit-animation: __logo-spin infinite 2s cubic-bezier(1, 0.3, 0.5, 7);
         animation: __logo-spin infinite 2s cubic-bezier(1, 0.3, 0.5, 7);
     }
 }
 
 @keyframes __logo-spin {
     from {
-    transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-    transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -44,17 +49,19 @@ body {
 
 .__headline {
     font-weight: bolder;
-    font-size: 50px;
-    line-height: 46px;
+    font-size: 40px;
+    line-height: 50px;
     font-family: -apple-system, 'Inter', 'Space Mono';
 }
 
 @-webkit-keyframes hue {
     from {
         -webkit-filter: hue-rotate(0deg);
+        filter: hue-rotate(0deg)
     }
     to {
         -webkit-filter: hue-rotate(-360deg);
+        filter: hue-rotate(-360deg)
     }
 }
 
@@ -80,5 +87,5 @@ p {
     font-weight: 400;
     line-height: 27px;
     font-size: 20px;
-    font-family: 'space mono';
+    font-family: 'Space Mono';
 }
