@@ -12,9 +12,9 @@ body {
 
 @media (prefers-reduced-motion) {
     .__logo-spin {
-        -moz-animation: __logo-spin infinite 2s cubic-bezier(1, 0.3, 0.5, 7);
-        -webkit-animation: __logo-spin infinite 2s cubic-bezier(1, 0.3, 0.5, 7);
-        animation: __logo-spin infinite 2s cubic-bezier(1, 0.3, 0.5, 7);
+        -moz-animation: __logo-spin infinite 2s linear;
+        -webkit-animation: __logo-spin infinite 2s linear;
+        animation: __logo-spin infinite 2s linear;
     }
 }
 
