@@ -1,4 +1,4 @@
-/* import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
 ::selection {
@@ -8,6 +8,21 @@
 body {
     background-color: rgb(16,8,24);
     color: whitesmoke;
+}
+
+@media (prefers-reduced-motion) {
+    .__logo {
+        animation: __logo-spin infinite 2s cubic-bezier(1, 0.3, 0.5, 7);
+    }
+}
+
+@keyframes __logo-spin {
+    from {
+    transform: rotate(0deg);
+    }
+    to {
+    transform: rotate(360deg);
+    }
 }
 
 .__emoji {
