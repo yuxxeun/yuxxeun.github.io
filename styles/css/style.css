@@ -15,6 +15,7 @@ body {
         -moz-animation: __logo-spin infinite 2s linear;
         -webkit-animation: __logo-spin infinite 2s linear;
         animation: __logo-spin infinite 2s linear;
+        animation-name: __logo-spin;
     }
 }
 
