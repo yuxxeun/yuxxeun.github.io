@@ -12,6 +12,7 @@ body {
 
 @media (prefers-reduced-motion) {
     .__logo {
+        -moz-animation: __logo-spin infinite 2s cubic-bezier(1, 0.3, 0.5, 7);
         animation: __logo-spin infinite 2s cubic-bezier(1, 0.3, 0.5, 7);
     }
 }
@@ -42,8 +43,8 @@ body {
 }
 
 .__headline {
-    font-weight: 700;
-    font-size: 40px;
+    font-weight: bolder;
+    font-size: 50px;
     line-height: 46px;
     font-family: -apple-system, 'Inter', 'Space Mono';
 }
@@ -67,6 +68,7 @@ body {
 
 .__story {
     color: #ffb900;
+    font-style: italic;
     text-decoration: underline;
 }
 
