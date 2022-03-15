@@ -10,37 +10,29 @@ body {
     color: whitesmoke;
 }
 
+
 @media (prefers-reduced-motion) {
-    .__logo-spin {
-        -moz-animation: __logo-spin infinite 2s linear;
-        -webkit-animation: __logo-spin infinite 2s linear;
-        animation: __logo-spin infinite 2s linear;
-        animation-name: __logo-spin;
+    .App-logo-spin {
+        -moz-animation: App-logo-spin infinite 2s linear;
+        -webkit-animation: App-logo-spin infinite 2s linear;
+        animation: App-logo-spin infinite 2s linear;
     }
 }
 
-@-webkit-keyframes __logo-spin {
+@-webkit-keyframes App-logo-spin {
     from {
         -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        transform: rotate(0deg);
     }
     to {
         -webkit-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        transform: rotate(360deg);
     }
 }
 
-@keyframes __logo-spin {
+@keyframes App-logo-spin {
     from {
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
         transform: rotate(0deg);
     }
     to {
-        -webkit-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
