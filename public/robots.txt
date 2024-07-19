@@ -1,0 +1,7 @@
+User-agent: Googlebot-Image
+Disallow: /_astro/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://sr24.vercel.app/sitemap-index.xml

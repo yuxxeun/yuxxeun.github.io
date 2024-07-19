@@ -1,0 +1,160 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Pagination from "@components/Pagination.astro";
+import { Image } from "astro:assets";
+import authorImage from "../../public/emoji.jpg";
+import type { ImageMetadata } from "astro";
+import { author } from "@data/constants";
+import Header from "@components/Header.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  image: ImageMetadata;
+  imageAlt: string;
+  pubDate: Date;
+  url: string;
+  updatedDate: Date | undefined;
+  readingTime: string;
+}
+
+const {
+  title,
+  description,
+  image,
+  imageAlt,
+  pubDate,
+  url,
+  updatedDate,
+  readingTime,
+} = Astro.props;
+
+const ogImage = {
+  src: `/image/${url}.png`,
+  alt: title,
+};
+
+const fullPubDate = pubDate.toLocaleDateString("en", {
+  dateStyle: "full",
+});
+
+const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Layout
+  title={title}
+  description={description}
+  ogImage={ogImage}
+  pubDate={updatedDate ?? pubDate}
+>
+  <header class="mb-8 flex flex-col">
+    <time
+      datetime={pubDate.toISOString()}
+      class="mb-4 block font-geistMonoVariable text-sm sm:text-base"
+    >
+      {fullPubDate}
+      <span>
+        <span aria-hidden="true"> •</span>
+        {readingTime}
+      </span>
+    </time>
+    <h1
+      class="pb-8 font-geistSansVariable text-4xl font-bold text-zinc-950 dark:text-zinc-100">
+      {title}
+    </h1>
+    <div class="mb-8 flex gap-2">
+      <div class="aspect-square overflow-hidden rounded-full">
+        <Image
+          src={authorImage}
+          alt="yuxxeun's cute avatar"
+          loading="eager"
+          class="aspect-square w-10"
+          width={80}
+          height={80}
+        />
+      </div>
+      <p class="text-sm text-zinc-700 dark:text-zinc-400">
+        <span class="block font-semibold">Krido Pambudi</span>
+        <a
+          class="text-zinc-00 block hover:underline dark:text-zinc-50"
+          href="https://github.com/yuxxeun"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          @{author}
+        </a>
+      </p>
+    </div>
+    <Image
+      src={image}
+      alt={imageAlt}
+      loading="eager"
+      class="rounded-lg object-cover"
+      width={1200}
+      height={630}
+    />
+  </header>
+  {
+    updatedDate && (
+      <article class="mb-6 rounded-md border border-zinc-500 bg-zinc-600/20 px-4 py-2 text-sm text-zinc-800 dark:text-zinc-200 sm:text-base">
+        <span class="font-semibold">Last updated: </span>
+        {fullUpdatedDate}
+      </article>
+    )
+  }
+  <article
+    class="prose text-lg sm:text-xl max-w-none dark:prose-invert prose-a:text-zinc-600 prose-a:underline prose-a:decoration-zinc-500 prose-a:underline-offset-4 hover:prose-a:decoration-zinc-300 prose-img:rounded-lg dark:prose-headings:text-zinc-100 dark:prose-a:text-zinc-300 dark:prose-code:text-zinc-300"
+  >
+    <slot />
+    <hr />
+  </article>
+  <section class="mt-20 grid place-items-center text-center">
+    <Header title="...thanks for reading..." />
+    <p class="mb-8 mt-3 text-lg max-w-prose leading-relaxed">
+      Hey, you can subscribe my <a
+        class="underline decoration-dotted"
+        href="/rss.xml">RSS feed</a
+      >.
+      <br>
+      With this way, you can stay up to date to our latest posts.
+    </p>
+  </section>
+  <!-- <ul class="mt-4 flex justify-between">
+    <li title="Copy the link of this article">
+      <button
+        id="copy"
+        class="flex flex-row items-center transition-colors hover:text-zinc-950 dark:hover:text-zinc-50">
+        <Icon name="url" size={16} class="mr-1" />
+        Share
+      </button>
+    </li>
+    <li>
+      <p class="flex flex-row items-center">
+        Thanks for reading 🍻
+      </p>
+    </li>
+  </ul>
+  <Toast
+    icon="url"
+    description="Link copied to clipboard."
+    idList="toast-share"
+  /> -->
+  <Pagination />
+</Layout>
+<script is:inline async>
+  document.getElementById("copy").addEventListener("click", function () {
+    let copyText = window.location.href;
+    let toastElement = document.getElementById("toast-share");
+
+    navigator.clipboard.writeText(copyText).then(() => {
+      toastElement.classList.remove("!invisible");
+      setTimeout(() => {
+        toastElement.classList.add("!invisible");
+      }, 2500);
+    });
+  });
+</script>

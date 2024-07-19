@@ -1,0 +1,44 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import { getCollection } from "astro:content";
+import Blog from "@components/Blog.astro";
+import SearchBar from "@components/SearchBar.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const title = "blog — yuxxeun";
+const description =
+  "Collection of all the blog posts that I have written. I write about web development, programming, and other things that I find interesting.";
+---
+<Layout title={title} description={description}>
+  <section class="grid place-items-center text-center">
+    <Header title="Blog" />
+    <p class="mb-10 tracking-tight max-w-prose font-normal italic font-newsreader font-semibold lg:text-2xl text-xl">
+      Collection of all the posts that I've written.
+      <br>
+      I write about any things that feels interesting.
+    </p>
+  </section>
+  <SearchBar />
+  <h2 class="mt-12 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+    Posts
+  </h2>
+  <ul class="mt-6 text-lg grid grid-cols-1 gap-6">
+    {posts.map((p) => <Blog {...p} />)}
+  </ul>
+  <section class="mt-20 grid place-items-center text-center">
+    <Header title="Want to stay updated?" />
+    <p class="mb-8 mt-3 text-lg max-w-prose">
+        Hey, you can subscribe my <a
+        class="underline decoration-dotted"
+        href="/rss.xml">RSS feed</a
+      >.
+      <br>
+      With this way, you can stay up to date to our latest posts.
+    </p>
+  </section>
+</Layout>
+

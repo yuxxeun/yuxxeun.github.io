@@ -1,0 +1,20 @@
+---
+import Book from "@components/Book.vue";
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+
+const title = `Bookmark's`
+const description = `Collection of all books that I've ever read.`
+---
+
+<Layout title={title} description={description}>
+    <section class="grid place-items-center text-center">
+        <Header title={title} />
+        <p class="tracking-tight max-w-prose font-normal italic font-newsreader font-semibold lg:text-2xl text-xl">
+            {description}
+        </p>
+    </section>
+    <ul class="mt-6 text-xl grid grid-cols-1 gap-6">
+       <Book client:load/>
+    </ul>
+</Layout>

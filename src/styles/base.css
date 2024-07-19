@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply flex scroll-mt-20 items-center gap-2;
+    font-weight: bold;
+  }
+}
+
+@layer base {
+  pre, code {
+    font-size: 14px;
+  } 
+
+  @font-face {
+    font-family: "geistSansVariable";
+    src: url("/fonts/GeistSans/variable/GeistVF.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "geistMonoVariable";
+    src: url("/fonts/GeistMono/variable/GeistMonoVF.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+:root {
+    cursor: crosshair;
+  }
+
+  ::selection {
+    background: #32fff1 !important;
+    color: #000000 !important;
+  }
+
+  ::-moz-selection {
+     background: #32fff1 !important;
+    color: #000000 !important;
+  }
+
+  .dark::selection {
+    background: #32fff1 !important;
+    color: #000000 !important;
+  }
+
+  .dark::-moz-selection {
+   background: #32fff1 !important;
+    color: #000000 !important;
+  }
+
+  :root {
+  --icon-color-light: #000000 !important; /* Hitam pekat untuk light mode */
+  --icon-color-dark: #FFFFFF !important; /* Putih pekat untuk dark mode */
+}
+
+body.light-mode .anchor-link-icon path {
+  fill: var(--icon-color-light);
+}
+
+body.dark-mode .anchor-link-icon path {
+  fill: var(--icon-color-dark);
+}
