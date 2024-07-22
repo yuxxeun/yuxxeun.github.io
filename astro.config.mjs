@@ -38,7 +38,7 @@ const createSROnlyLabel = text => {
 // https://astro.build/config
 export default defineConfig({
   site: "https://yuxxeun.github.io",
-  base: 'yuxxeun.github.io',
+  base: '/yuxxeun.github.io',
   output: 'static',
   adapter: node({
     mode: 'standalone',
