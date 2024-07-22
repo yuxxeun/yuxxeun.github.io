@@ -1,7 +1,0 @@
-User-agent: Googlebot-Image
-Disallow: /_astro/
-
-User-agent: *
-Allow: /
-
-Sitemap: https://yuxxeun.vercel.app/sitemap-index.xml

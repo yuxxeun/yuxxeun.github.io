@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -16,12 +16,12 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Install, build, and upload your site
+      - name: Install, build, and upload your site output
         uses: withastro/action@v2
-        env:
-          PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          PUBLIC_SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-
+        with:
+            path: . 
+            node-version: 20
+            package-manager: npm@latest 
   deploy:
     needs: build
     runs-on: ubuntu-latest
