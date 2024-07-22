@@ -51,8 +51,6 @@ jobs:
           fi
       - name: Setup Node
         uses: withastro/action@v2
-        with:
-          node-version: 20
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
