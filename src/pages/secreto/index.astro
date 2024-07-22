@@ -1,0 +1,22 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Secreto from "@components/Secreto.vue";
+
+const title = 'secreto — yuxxeun'
+const description = 'say hello or tell me something funny today...'
+---
+
+<Layout title={title} description={description}>
+    <section class="grid place-items-center text-center">
+        <Header title="secreto" />
+        <p class="mb-10 tracking-tight max-w-prose font-normal italic font-newsreader font-semibold lg:text-2xl text-xl">
+            {description}
+            <br/>
+            this section is under development!
+        </p>
+    </section>
+    <ul class="text-xl grid grid-cols-1 gap-6">
+       <Secreto client:load/>
+    </ul>
+</Layout>
